@@ -100,11 +100,15 @@ Windows support will be different, and Dockerised equivalents may not be
 found for any of the following:
 
 * Start with Windows Server 2019 WIM (this is a Windows equivalent of a tarball)
-* Boot Windows PE with secondary volume
-* Write out WIM to secondary volume
 * Enable Windows Containers offline
-* Copy required kubelet, containerd equivalents over to new FS
+* Gather Windows Updates offline (third party tools for this, maybe MS could provide something useful here)
+* Mount WIM
+* Copy kubelet, kube-proxy, and required binaries into place (\\wim\Program Files\Kubernetes), etc..
+* Mount WIM's system registry
+* Set up services under HKLM
 * Add customisations to OOBE XML manifest
-* Apply Windows Updates offline
+* Close WIM
 * Apply offline drivers for cloud providers
+* Mount empty disk, partition, format
+* Apply WIM to volume
 * Write out boot manager
